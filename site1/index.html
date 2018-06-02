@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    
+    <title>Adventure Hunt</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-dark bg-dark justify-content-between">
+      <a class="navbar-brand">Adventure Hunt</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <i class="fa fa-search" ></i>
+        </button>
+      </form>
+    </nav>
+    <header>
+      <div class="container-fluid bg-dark container-slideshow">
+        <div class="row">
+          <div class="col-sm-12" >
+            <img data-bind="attr: {src:imgSrc}" style="max-width: 1300px; display: block;
+            left: 15px;
+            right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;" id="slider">              
+          </div>
+          <a class="prev" data-bind="click : slideHandler(-1)">&#10094;</a>
+          <a class="next" data-bind="click : slideHandler(1)">&#10095;</a>
+        </div>
+      </div>
+    </header>   
+    <section>
+      <div class="container-fluid bg-dark">
+        <div class="card-deck row" data-bind="foreach: places">          
+          <div class="card mt-5">
+            <img class="card-img-top place-img" data-bind="attr: {src: placeImg}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" data-bind="text: name"></h5>
+              <h6>Must Visit Spots</h6>
+              <ul data-bind="foreach: {data : placesToVisit, as: 'item'}">
+                <li data-bind="text: item"></li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Book a Tour</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <footer>
+        <div class="container-fluid">
+          <div class="row footerrow">
+            <div class="col-sm-4 mt-5">
+              <h4>Information</h4>
+              <ul class="m-0 p-0">
+                <li>
+                  <a href="index.html">Home</a>
+                  </li>
+                  <li><a href="index.html">About Us</a></li>
+                  <li>
+                    <a href="index.html">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="index.html">Services</a>
+                  </li>
+                  <li>
+                      <a href="index.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 mt-5">
+              <h4>Adventure Hunt</h4>
+              <h6 class="info">We Help U Find Ur Hunt</h6>
+              <p class="info">Travelling is fun. With us fun is unlimited!!!</p>
+              <!--  <div class="social"> -->
+                <i class="fa fa-facebook-official fa-2x front"></i>
+              <!-- </div>  -->
+              <!-- <div class="social"><i class="fa fa-facebook-official fa-2x back"></i></div> -->
+              <i class="fa fa-linkedin-square fa-2x"></i>
+              <i class="fa fa-twitter-square fa-2x"></i>
+              <i class="fa fa-instagram fa-2x"></i>
+            </div>
+            <div class="col-sm-4 mt-5">
+              <h4>Contact</h4>
+              <div class="info">
+                <i class="fa fa-phone"></i>
+                <span>+91 1234567890</span>
+              </div>
+              <div class="info">
+                  <i class="fa fa-map-marker"></i>
+                  <span>First cross street, Parliament Road, Bengaluru, Maharastra </span>
+                  <span>123456</span>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="app.js">
+    </script>
+    
+  </body>
+  </html>
